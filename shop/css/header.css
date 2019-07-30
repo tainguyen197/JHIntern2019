@@ -3,15 +3,19 @@ header {
     position: fixed;
     /* top: 0; */
     /* left: 0; */
-    width: 100vw;
-    height: 75px;
     background: #282a32;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    transition: background 0.75s;
+    width: 100vw;
   }
   
+header .header-content{
+
+  height: 75px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: background 0.75s;
+}
+
 .active-header{
     background: transparent;
 }

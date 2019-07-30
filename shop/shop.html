@@ -8,37 +8,45 @@
     <link rel="stylesheet" href="./css/slide.css" />
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/map.css">
     <title>Document</title>
   </head>
   <body>
+    <!-- header -->
     <header id="header">
-      <div id="nav-icon" class="nav-icon">
-        <div></div>
+      <div class="header-content container">
+          <div id="nav-icon" class="nav-icon">
+              <div></div>
+            </div>
+            <div id="menu" class="menu">
+            </div>
+            <div class="logo">
+              <img src="./img/logo.jpg" alt="" />
+            </div>
+            <div class="cart-icon">
+              <span id="numberCart" class="number-cart">0</span>
+              <button></button>
+            </div>
       </div>
-      <div id="menu" class="menu">
-        <!-- <ul>
-          <li>Login</li>
-          <li>About</li>
-          <li>Location</li>
-        </ul> -->
-      </div>
-      <div class="logo">
-        <img src="./img/logo.jpg" alt="" />
-      </div>
-      <div class="cart-icon">
-        <span id="numberCart" class="number-cart">0</span>
-        <button></button>
-      </div>
+    
     </header>
 
     <main id="main-content" class="main-content">
+
+      <section id = 'map-content'>
+        <div id='mapBox' class="map-box">
+            <div id="map" class="map"></div>
+          <button id = 'close-map'>Close</button>
+        </div>
+      </section>
+      
       <!-- story -->
       <section id="story" class="story ">
         <div id="picture-box" class="picture-box"></div>
       </section>
 
       <!-- best sale -->
-      <section class="list-item-section">
+      <section class="list-item-section container" >
         <div class="item-title-content">
           <h2 class="title">Best product</h2>
           <img src="./img/best-sale.png" alt="" />
@@ -56,7 +64,7 @@
       </section>
 
       <!-- hot sale -->
-      <section class="list-item-section">
+      <section class="list-item-section container">
         <div class="item-title-content">
           <h2 class="title">Hot product</h2>
           <img src="./img/hot-sale.png" alt="" />
@@ -123,16 +131,23 @@
             </div>
           </div>
         </div>
-        <!-- <div class="copyright">
-                                Made by NTT.
-                        </div> -->
       </div>
     </footer>
+    <script src="./model/cart.js"></script>
+    <script src="./model/user.js"></script>
+    <script src="./model/product.js"></script>
+    <script src="./model/commission.js"></script>
+    <script src="./model/money.js"></script>
+    <script src="./js/createUuid.js"></script>
+    <script src="./data/data.js"></script>
     <script src="./js/customMoney.js"></script>
     <script src="./js/shop.js"></script>
     <script src="./js/slide.js"></script>
     <script src="./js/scroll.js"></script>
     <script src="./js/menu.js"></script>
+    <script src="./js/location.js"></script>
     
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoBGukMgWP82wOqAaDqkXeslb9V4jXH28&callback=initMap"
+    async defer></script>
   </body>
 </html>
