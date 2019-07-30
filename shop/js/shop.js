@@ -48,10 +48,7 @@ initItems = function(listItem, bestSeller) {
   });
 };
 
-updateNumberIconCart = () => {
-  document.getElementById("numberCart").textContent = user.cart.buyItems.length;
-  //save data in cookie
-};
+
 
 setCookie = () =>{
     const now = new Date();
@@ -76,30 +73,18 @@ delCookie = () =>{
       "listItem=" + JSON.stringify(user.cart.buyItems) + ";expires=Thu, 01 Jan 1970 00:00:00 UTC"
 }
 
-initItemInCart = () => {
-  const itemInCookie = document.cookie.split("; ");
-  itemInCookie.forEach(item => {
-    if (item.search("listItem") >= 0) {
-      const itemInCart = JSON.parse(item.slice("listItem".length + 1));
 
-      user.cart.buyItems = itemInCart;
-      updateNumberIconCart();
-    }
-  });
-};
 
 const user = new User();
 const commissionForProvider = new Commission(0.15);
 
-main = () => {
+shop = () => {
   initListProductBestSell();
   initListHotSell();
-
-
   initItemInCart();
 
   // console.log('buy',user.buyItems)
   // delCookie(); 
 };
 
-main();
+shop();
