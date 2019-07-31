@@ -104,7 +104,7 @@ cart = () => {
     showItem(product, element.number);
   });
 
-  const temporaryCost = user.toTalPrice();
+  const temporaryCost = user.cart.toTalPrice();
   const comission = comissionForProvider.comission;
 
   const totalPrice = temporaryCost - temporaryCost * comission;
