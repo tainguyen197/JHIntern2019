@@ -24,6 +24,12 @@ class Cart {
     }
   }
 
+  removeCart(productId){
+    this.buyItems.forEach(item => {
+      if (item.product === productId) this.updateNumberItem(item, -1);
+    });
+  }
+
   updateNumberItem(item, number) {
     if (item.number <= 1 && number < 0) {
       this.buyItems.some((itemCart, index) => {

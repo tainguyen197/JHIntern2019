@@ -1,3 +1,5 @@
+//set type user in line 43
+
 const customer = "Tai";
 const admin = "Admin";
 const nav = document.getElementById("nav-icon");

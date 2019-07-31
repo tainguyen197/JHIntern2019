@@ -16,4 +16,10 @@ class Product {
     isDuplicate(product) {
       return this.id === product.id;
     }
+
+    getProductById(id){
+        if(this.id === id){
+          return this;
+        }      
+    }
   }

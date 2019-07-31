@@ -34,7 +34,7 @@ initMap = () => {
         map.setCenter(geolocate);
       },
       () => {
-        window.alert("Oh no :(");
+        console.log("Oh no :(");
       }
     );
   } else {

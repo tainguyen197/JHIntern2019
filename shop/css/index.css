@@ -27,10 +27,7 @@ body {
   a {
     text-decoration-line: none;
   }
-  @font-face {
-    font-family: helvetica;
-    src: url("./font/HelveticaNeue-Condensed.otf");
-  }
+
   
   .price {
     font-weight: 600;

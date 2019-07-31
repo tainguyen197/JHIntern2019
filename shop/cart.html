@@ -9,144 +9,145 @@
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="./css/footer.css" />
     <link rel="stylesheet" href="./css/cart.css" />
+    <link rel="stylesheet" href="./css/map.css">
     <title>Document</title>
   </head>
   <body>
     <!-- header -->
     <header id="header">
       <div class="header-content container">
-          <div id="nav-icon" class="nav-icon">
-              <div></div>
-            </div>
-            <div id="menu" class="menu">
-            </div>
-            <div class="logo">
-              <img src="./img/logo.jpg" alt="" />
-            </div>
-            <div class="cart-icon">
-              <span id="numberCart" class="number-cart">0</span>
-              <button></button>
-            </div>
+        <div id="nav-icon" class="nav-icon">
+          <div></div>
+        </div>
+        <div id="menu" class="menu"></div>
+        <a class="logo" href="./shop.html">
+          <img src="./img/logo.jpg" alt="" />
+        </a>
+        <a class="cart-icon" href="./cart.html">
+          <span id="numberCart" class="number-cart">0</span>
+          <button></button>
+        </a>
       </div>
-    
     </header>
 
-    <main class="cart-main">
+    <main class="cart-main container" >
+
+        <section id = 'map-content'>
+            <div id='mapBox' class="map-box">
+                <div id="map" class="map"></div>
+              <button id = 'close-map'>Close</button>
+            </div>
+          </section>
+
       <!-- cart-box -->
       <section>
         <div class="cart-box">
           <h2>Cart</h2>
 
           <div class="cart-box-content">
-            <div class="item-cart">
-              <img src="./img/product/1.jpg" alt="" />
-              <div class="item-name-box">
-                <p>Spaghetti Strap Cropped Top - Black S</p>
-              </div>
-              <div class="item-price-box">
-                <p>13123.231</p>
-              </div>
-              <div class="select-number-box">
-                <button>-</button>
-                <input type="text" value="1"/>
-                <button>+</button>
-              </div>
-            </div>
+            <div id="cartBoxContent" class="item-cart-box"></div>
             <div class="checkout-box">
               <div class="total-cost-box">
-              <div class="temporary-box">
-                <p>Temporary cost:</p>
-                <p>123123</p>
+                <div class="temporary-box">
+                  <p>Temporary cost:</p>
+                  <p id="emporaryPrice">0</p>
+                </div>
+                <div class="comission-box">
+                  <p>Comission:</p>
+                  <p id="comission">0%</p>
+                </div>
+                <div class="total-price-box">
+                  <p>Total:</p>
+                  <p id="totalPrice" class="total-price">0</p>
+                </div>
               </div>
-              <div class="comission-box">
-                <p>Comission:</p>
-                <p>-15%</p>
-              </div>
-              <div class="total-price-box">
-                <p>Total:</p>
-                <p class="total-price">11231413</p>
-              </div>
-            </div>
-            <button class="pay-btn">
+              <button class="pay-btn">
                 Order Now
-            </button>
+              </button>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-      <!-- footer -->
-      <footer class="footer">
-          <div class="container">
-            <div class="footer-nav">
-              <div class="footer-logo-content">
-                <div class="logo-content">
-                  <img src="./img/logo.jpg" alt="logo" />
-                  <div class="name-logo">NTT Studio Weeding</div>
-                </div>
-                <p class="logo-sub-content">
-                  Hennes & Mauritz AB is a Swedish multinational clothing-retail
-                  company known for its fast-fashion clothing for men, women,
-                  teenagers and children.
-                </p>
-              </div>
-    
-              <div class="menu-link">
-                <div class="menu-one">
-                  <ul>
-                    <li>
-                      Home
-                    </li>
-                    <li>Traditional</li>
-                    <li>Custom</li>
-                    <li>About</li>
-                  </ul>
-                </div>
-                <div class="menu-two">
-                  <ul>
-                    <li>
-                      English
-                    </li>
-                    <li>Franchs</li>
-                    <li>Tiếng Việt</li>
-                    <li>中國</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="network-info">
-                <div class="network-info-header">
-                  Follow us
-                </div>
-                <div class="icon-network">
-                  <a href="https://www.instagram.com/">
-                    <img src="./img/footer/instagram.png" alt="instagram" />
-                  </a>
-                  <a href="https://www.facebook.com">
-                    <img src="./img/footer/facebook.png" alt="facebook" />
-                  </a>
-                  <a href="https://twitter.com/">
-                    <img src="./img/footer/tweeter.png" alt="tweeter" />
-                  </a>
-                </div>
-                <div class="network-info-more">
-                  A habitant perferendis pulvinar
-                </div>
-              </div>
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-nav">
+          <div class="footer-logo-content">
+            <div class="logo-content">
+              <img src="./img/logo.jpg" alt="logo" />
+              <div class="name-logo">NTT Studio Weeding</div>
+            </div>
+            <p class="logo-sub-content">
+              Hennes & Mauritz AB is a Swedish multinational clothing-retail
+              company known for its fast-fashion clothing for men, women,
+              teenagers and children.
+            </p>
+          </div>
+
+          <div class="menu-link">
+            <div class="menu-one">
+              <ul>
+                <li>
+                  Home
+                </li>
+                <li>Traditional</li>
+                <li>Custom</li>
+                <li>About</li>
+              </ul>
+            </div>
+            <div class="menu-two">
+              <ul>
+                <li>
+                  English
+                </li>
+                <li>Franchs</li>
+                <li>Tiếng Việt</li>
+                <li>中國</li>
+              </ul>
             </div>
           </div>
-        </footer>
-        <script src="./model/cart.js"></script>
-        <script src="./model/user.js"></script>
-        <script src="./model/product.js"></script>
-        <script src="./model/commission.js"></script>
-        <script src="./model/money.js"></script>
-        <script src="./js/menu.js"></script>
+          <div class="network-info">
+            <div class="network-info-header">
+              Follow us
+            </div>
+            <div class="icon-network">
+              <a href="https://www.instagram.com/">
+                <img src="./img/footer/instagram.png" alt="instagram" />
+              </a>
+              <a href="https://www.facebook.com">
+                <img src="./img/footer/facebook.png" alt="facebook" />
+              </a>
+              <a href="https://twitter.com/">
+                <img src="./img/footer/tweeter.png" alt="tweeter" />
+              </a>
+            </div>
+            <div class="network-info-more">
+              A habitant perferendis pulvinar
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/customMoney.js"></script>
+    <script src="./data/data.js"></script>
+    <script src="./js/createUuid.js"></script>
+    <script src="./model/cart.js"></script>
+    <script src="./model/user.js"></script>
+    <script src="./model/product.js"></script>
+    <script src="./model/commission.js"></script>
+    <script src="./model/money.js"></script>
+    <script src="./js/menu.js"></script>
 
-
-        <script src="./js/header.js"></script>
-        <script src="./js/cart.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoBGukMgWP82wOqAaDqkXeslb9V4jXH28&callback=initMap"
-        async defer></script>
+    <script src="./js/location.js"></script>
+    <script src="./js/cookie.js"></script>
+    <script src="./js/header.js"></script>
+    <script src="./js/cart.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoBGukMgWP82wOqAaDqkXeslb9V4jXH28&callback=initMap"
+      async
+      defer
+    ></script>
   </body>
 </html>
