@@ -1,21 +1,24 @@
-
-const closeMapBtn = document.getElementById('close-map');
-if(closeMapBtn){
-  closeMapBtn.addEventListener('click',() =>{
-    const locationMap = document.getElementById('mapBox')
-		locationMap.classList.remove('map-box-active');
-  })
+const closeMapBtn = document.getElementById("close-map");
+if (closeMapBtn) {
+  closeMapBtn.addEventListener("click", () => {
+    const locationMap = document.getElementById("mapBox");
+    locationMap.classList.remove("map-box-active");
+  });
 }
 
 initMap = () => {
   const JHOffice = { lat: 10.7643763, lng: 106.68136 };
-  const image = 'https://i.ibb.co/7zXpPsZ/marker2.png';
+  const image = "https://i.ibb.co/7zXpPsZ/marker2.png";
   const map = new google.maps.Map(document.getElementById("map"), {
     center: JHOffice,
-    zoom: 17,
+    zoom: 17
   });
 
-  const marker = new google.maps.Marker({ position: JHOffice, map: map,icon:image });
+  const marker = new google.maps.Marker({
+    position: JHOffice,
+    map: map,
+    icon: image
+  });
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       position => {
@@ -39,5 +42,4 @@ initMap = () => {
     );
   } else {
   }
-}
-
+};

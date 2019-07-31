@@ -1,154 +1,165 @@
-main,body{
-    padding: 0;
-    margin: 0 ;
-
+main,
+body {
+  padding: 0;
+  margin: 0;
 }
 
-.background-blur{
-    position: absolute;
-    background-image: url('./img/captain.jpg');
-    filter: blur(40px);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
-    height: 100%;
-    width: 100%
+.background-blur {
+  position: absolute;
+  background-image: url("./img/captain.jpg");
+  filter: blur(40px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
 }
 
-.story{
-    height: 100vh;
-    width: 25vw;
-    min-width: 300px;
-    position: relative;
-    margin: auto;
+.story {
+  height: 100vh;
+  width: 25vw;
+  /* min-width: 425px; */
+  min-width: 320px;
+  position: relative;
+  margin: auto;
 }
 
-.story .picture-box{
-    position: absolute;
-    height: 100%;
-    width: 100%;
+.story .picture-box {
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 
-.story .picture-box img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
+.story .picture-box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-.show-next .next{
-    opacity: 1 !important;
+.show-next .next {
+  opacity: 1 !important;
 }
 
-.show-next .previous{
-    opacity: 1 !important;
+.show-next .previous {
+  opacity: 1 !important;
 }
 
+.story .move-picture {
+  position: absolute;
 
-.story .move-picture{
-    position: absolute;
-
-    height: 100px;
-    width: 100%;
-    top:40%;
-    display: flex;  
-    align-items: center;
-    justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  top: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-
-.story  .previous{
-    opacity: 0 ;
-    transition: opacity 0.5s;
-    width: 15%;
-    height: 100%;
-    position: absolute;
-    background-image: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0));
-    animation-name: blur;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.story .previous {
+  opacity: 0;
+  transition: opacity 0.5s;
+  width: 15%;
+  height: 100%;
+  position: absolute;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0)
+  );
+  animation-name: blur;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.story  .next{
-    opacity: 0;
-    transition: opacity 0.5s;
-    width: 50px;
-    height: 50px;
-    width: 15%;
-    height: 100%;
-    position: absolute;
-    right: 0;
-    background-image: linear-gradient(to left, rgba(0,0,0,0.5), rgba(0,0,0,0));
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.story .next {
+  opacity: 0;
+  transition: opacity 0.5s;
+  width: 50px;
+  height: 50px;
+  width: 15%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.story  .previous img{
-    width: 20px;
-    height:20px;
-
+.story .previous img {
+  width: 20px;
+  height: 20px;
 }
 
-.story .next img{
-    width: 20px;
-    height:20px;
-
+.story .next img {
+  width: 20px;
+  height: 20px;
 }
-.story .play-icon{
-    position: absolute;
-    height: 20px;
-    width: 20px;
-    bottom: 5%;
-    right: 5%;
-    z-index: 1;
-}
-
-.story .play-icon img{
-    height: 100%;
-    width: 100%
+.story .play-icon {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  bottom: 5%;
+  right: 5%;
+  z-index: 1;
 }
 
-.story .line-box{
-    position: absolute;
-    width: 100%;
-    height: 5px;
-    bottom: 2%;
-    display: flex;
-    justify-content: center;
+.story .play-icon img {
+  height: 100%;
+  width: 100%;
 }
 
-.story .line-box .line-number{
-    position: relative;
-    height: 100%;
-    width: 90%;
-    background-color: #8e848487;
-    margin: 0 2px 0 2px;
+.story .line-box {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  bottom: 2%;
+  display: flex;
+  justify-content: center;
 }
 
-.story .line-box .line-number .run-line{
-    height: 100%;
-    width: 100%;
-    background-color: #ffffff;
-    animation-name: runline;
+.story .line-box .line-number {
+  position: relative;
+  height: 100%;
+  width: 90%;
+  background-color: #8e848487;
+  margin: 0 2px 0 2px;
+}
 
+.story .line-box .line-number .run-line {
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  animation-name: runline;
 }
 
 @keyframes runline {
-    from {width: 0px;}
-    to {width: 100%;}
+  from {
+    width: 0px;
   }
-  
-  @keyframes runline {
-    from {width: 0px;}
-    to {width: 100%;}
+  to {
+    width: 100%;
   }
-  
+}
 
-  @media only screen and (max-width: 425px) {
-    .story{
-        width: 100vw;
-    }
+@keyframes runline {
+  from {
+    width: 0px;
   }
+  to {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .story {
+    width: 100vw;
+  }
+}

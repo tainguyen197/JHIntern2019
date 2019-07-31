@@ -4,7 +4,7 @@ class Picture {
     this.src = src;
   }
 }
-  
+
 class Slide {
   constructor() {
     this.duration = 1;
@@ -34,16 +34,13 @@ class Slide {
   }
 
   showEveryPicture() {
-    
     if (this.current === this.listPictures.length) {
-      
       clearInterval(this.interval);
       this.interval = null;
       this.playAt(0);
-    }
-    else{
+    } else {
       this.updateStatePicture();
-      this.current= this.current + 1
+      this.current = this.current + 1;
     }
   }
 
@@ -51,23 +48,20 @@ class Slide {
     const activePicture = document.getElementById("picture" + this.current);
     this.listPictures.forEach((item, index) => {
       if (index != this.current) {
-        const picture = document.getElementById("picture"+index);
-        if(picture.classList.contains('active'))
-          picture.classList.remove('active');
+        const picture = document.getElementById("picture" + index);
+        if (picture.classList.contains("active"))
+          picture.classList.remove("active");
       }
     });
 
-    activePicture.classList.add('active');
-
-
+    activePicture.classList.add("active");
   }
 
   playAt(index) {
     this.current = index;
     this.updateStatePicture();
-    this.current = this.current+1;
+    this.current = this.current + 1;
     if (!this.interval) {
-
       this.interval = setInterval(() => {
         this.showEveryPicture();
       }, 1000 * this.duration);

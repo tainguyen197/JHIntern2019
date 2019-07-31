@@ -1,7 +1,9 @@
 customMoney = number => {
-    
   if (!isNaN(number)) {
-    number = number.toString().split("").reverse();
+    number = number
+      .toString()
+      .split("")
+      .reverse();
 
     for (let i = 1, index = 1; i < number.length; i++) {
       if (index % 3 === 0) {

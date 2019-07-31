@@ -1,9 +1,9 @@
 const user = new User();
 const comissionForProvider = new Commission(0.15);
 
-const cartBox = document.getElementById('cartBoxContent')
+const cartBox = document.getElementById("cartBoxContent");
 // console.log(cartBox)
-showItem = (item,number) => {
+showItem = (item, number) => {
   // console.log(item)
   // const cartBox = document.getElementById('')
 
@@ -23,7 +23,7 @@ showItem = (item,number) => {
   itemPriceBox.classList.add("item-price-box");
 
   const itemPriceBoxp = document.createElement("p");
-  itemPriceBoxp.textContent = customMoney(item.price) +item.unit;
+  itemPriceBoxp.textContent = customMoney(item.price) + item.unit;
 
   const selectNumberBox = document.createElement("div");
   selectNumberBox.classList.add("select-number-box");
@@ -43,38 +43,37 @@ showItem = (item,number) => {
 
   itemCart.appendChild(selectNumberBox);
   selectNumberBox.appendChild(selectNumberBoxbtnMinus);
-  selectNumberBoxbtnMinus.textContent = '-';
+  selectNumberBoxbtnMinus.textContent = "-";
   selectNumberBox.appendChild(selectNumberBoxinput);
-  selectNumberBoxinput.setAttribute('readonly',true)
+  selectNumberBoxinput.setAttribute("readonly", true);
   selectNumberBoxinput.value = number;
   selectNumberBox.appendChild(selectNumberBoxbtnAdd);
-  selectNumberBoxbtnAdd.textContent = '+';
+  selectNumberBoxbtnAdd.textContent = "+";
 
-  selectNumberBoxbtnAdd.addEventListener('click',()=>{
-
+  selectNumberBoxbtnAdd.addEventListener("click", () => {
     user.cart.addCart(item.id);
-      setCookie();
-      window.location.reload();
-  })
+    setCookie();
+    window.location.reload();
+  });
 
-  selectNumberBoxbtnMinus.addEventListener('click',()=>{
+  selectNumberBoxbtnMinus.addEventListener("click", () => {
     user.cart.removeCart(item.id);
     setCookie();
     window.location.reload();
-  })  
+  });
 };
 
 showListItemInCart = () => {};
 
-showCost = (temporaryCost, comission,totalPrice,unit) =>{
-  const temporary = document.getElementById('emporaryPrice');
-  const comissionProvider = document.getElementById('comission');
-  const totalCost = document.getElementById('totalPrice');
+showCost = (temporaryCost, comission, totalPrice, unit) => {
+  const temporary = document.getElementById("emporaryPrice");
+  const comissionProvider = document.getElementById("comission");
+  const totalCost = document.getElementById("totalPrice");
 
   temporary.textContent = customMoney(temporaryCost) + unit;
-  comissionProvider.textContent = comission + '%';
-  totalCost.textContent = customMoney(totalPrice)+unit;
-}
+  comissionProvider.textContent = comission + "%";
+  totalCost.textContent = customMoney(totalPrice) + unit;
+};
 
 cart = () => {
   initItemInCart();
@@ -95,22 +94,22 @@ cart = () => {
       return item.id === element.product;
     })[0];
 
-    if(!product){
+    if (!product) {
       product = listHotSell.filter(item => {
         return item.id === element.product;
       })[0];
     }
-    
+
     //show product
-    showItem(product,element.number);
+    showItem(product, element.number);
   });
 
   const temporaryCost = user.toTalPrice();
   const comission = comissionForProvider.comission;
 
-  const totalPrice = temporaryCost - temporaryCost*comission;
+  const totalPrice = temporaryCost - temporaryCost * comission;
 
-  showCost(temporaryCost,comission*100,totalPrice,'đ');
+  showCost(temporaryCost, comission * 100, totalPrice, "đ");
 };
 
 cart();

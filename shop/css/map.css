@@ -1,41 +1,39 @@
-.map-box{
-    position: fixed;
-    height: 70vh;
-    width: 70vw;
-    background-color: #ffffff;
-    top:15vh;
-    left: 15vw;
-    z-index: 5;
-    visibility: hidden;
-    opacity: 0;
-    transition:  opacity 0.5s 
+.map-box {
+  position: fixed;
+  height: 70vh;
+  width: 70vw;
+  background-color: #ffffff;
+  top: 15vh;
+  left: 15vw;
+  z-index: 5;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 
-.map-box .map{
-    position: relative;
-    height: 90%;
-    width: 100%;
+.map-box .map {
+  position: relative;
+  height: 90%;
+  width: 100%;
 }
 
-.map-box button{
-    position: relative;
-    height: 10%;
-    width: 100%;
-    border: none;
-    background-color: #282a32;
-    color: #ffffff;
-    font-size: 15px;
+.map-box button {
+  position: relative;
+  height: 10%;
+  width: 100%;
+  border: none;
+  background-color: #282a32;
+  color: #ffffff;
+  font-size: 15px;
 }
-.map-box-active{
-    opacity: 1;
-    visibility: visible;
-    
+.map-box-active {
+  opacity: 1;
+  visibility: visible;
 }
-
 
 @media only screen and (max-width: 425px) {
-    .map-box{
-        width: 100vw;
-        left: 0;
-    }
+  .map-box {
+    width: 100vw;
+    left: 0;
+  }
 }

@@ -1,5 +1,5 @@
 initItems = function(listItem, bestSeller) {
-  listItem.forEach((item) => {
+  listItem.forEach(item => {
     const itemBox = document.createElement("div");
     itemBox.classList.add("item-box");
 
@@ -10,7 +10,7 @@ initItems = function(listItem, bestSeller) {
     img.setAttribute("src", item.src);
 
     const titleContent = document.createElement("p");
-    titleContent.classList.add('item-title');
+    titleContent.classList.add("item-title");
     titleContent.textContent = item.name;
 
     const itemBoxContent = document.createElement("div");
@@ -48,9 +48,6 @@ initItems = function(listItem, bestSeller) {
   });
 };
 
-
-
-
 initListProductBestSell = () => {
   const mainContain = document.getElementById("best-item");
   initItems(listBestSell, mainContain);
@@ -61,8 +58,6 @@ initListHotSell = () => {
   initItems(listHotSell, mainContain);
 };
 
-
-
 const user = new User();
 const commissionForProvider = new Commission(0.15);
 
@@ -72,7 +67,7 @@ shop = () => {
   initItemInCart();
 
   // console.log('buy',user.buyItems)
-  // delCookie(); 
+  // delCookie();
 };
 
 shop();

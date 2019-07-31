@@ -51,7 +51,7 @@ class Slide {
 
     const runBox = document.getElementById("lineNumber" + this.current);
     const haveRunLine = document.getElementById("runLine" + this.current);
-    
+
     if (!haveRunLine) {
       const runLine = document.createElement("div");
       runLine.classList.add("run-line");
@@ -65,11 +65,10 @@ class Slide {
     }
 
     picture.src = this.listPictures[this.current].src;
-    
   }
 
   clearRunLine() {
-    for (var i = 0; i < this.listPictures.length; i++) {
+    for (let i = 0; i < this.listPictures.length; i++) {
       this.clearRunLineAt(i);
     }
   }
@@ -140,7 +139,6 @@ class Slide {
   }
 }
 
-
 const showNext = document.getElementById("story");
 showNext.addEventListener("mouseover", () => {
   if (!showNext.classList.contains("show-next")) {
@@ -195,8 +193,6 @@ const main = () => {
   slide.showLineNumber();
 
   slide.playAt(0);
-
 };
-
 
 main();
