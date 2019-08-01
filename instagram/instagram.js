@@ -68,9 +68,9 @@ class Slide {
   }
 
   clearRunLine() {
-    for (let i = 0; i < this.listPictures.length; i++) {
-      this.clearRunLineAt(i);
-    }
+    this.listPictures.forEach((item,index)=>{
+      this.clearRunLineAt(index);
+    })
   }
 
   clearRunLineAt(index) {

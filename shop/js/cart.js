@@ -79,26 +79,26 @@ cart = () => {
   initItemInCart();
   user.cart.buyItems.forEach(element => {
     //search in listBestSell
-    // const product =
-    //   listBestSell.filter(item => {
-    //     return item.id === element.product;
-    //   }).length > 0
-    //     ? listBestSell.filter(item => {
-    //         return item.id === element.product;
-    //       })
-    //     : listHotSell.filter(item => {
-    //         return item.id === element.product;
-    //       });
-
-    let product = listBestSell.filter(item => {
-      return item.id === element.product;
-    })[0];
-
-    if (!product) {
-      product = listHotSell.filter(item => {
+    const product =
+      listBestSell.filter(item => {
         return item.id === element.product;
-      })[0];
-    }
+      }).length > 0
+        ? listBestSell.filter(item => {
+            return item.id === element.product;
+          })[0]
+        : listHotSell.filter(item => {
+            return item.id === element.product;
+          })[0];
+
+    // let product = listBestSell.filter(item => {
+    //   return item.id === element.product;
+    // })[0];
+
+    // if (!product) {
+    //   product = listHotSell.filter(item => {
+    //     return item.id === element.product;
+    //   })[0];
+    // }
 
     //show product
     showItem(product, element.number);

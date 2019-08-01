@@ -44,18 +44,19 @@ class Cart {
 
   toTalPrice() {
     const listPrice = [];
-    this.buyItems.forEach(item => {
-      let product = listBestSell.filter(itemSell => {
-        return itemSell.id === item.product;
-      })[0];
+    this.buyItems.forEach(element => {
+        const product =
+      listBestSell.filter(item => {
+        return item.id === element.product;
+      }).length > 0
+        ? listBestSell.filter(item => {
+            return item.id === element.product;
+          })[0]
+        : listHotSell.filter(item => {
+            return item.id === element.product;
+          })[0];
 
-      if (!product) {
-        product = listHotSell.filter(itemHot => {
-          return itemHot.id === item.product;
-        })[0];
-      }
-
-      listPrice.push(product.price * item.number  );
+      listPrice.push(product.price * element.number  );
     });
 
     return listPrice.reduce((previous, cusor) =>{
