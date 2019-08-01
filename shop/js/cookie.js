@@ -8,7 +8,7 @@ setCookie = () =>{
 
 delCookie = () =>{
     document.cookie =
-        "listItem=" + JSON.stringify(user.cart.buyItems) + ";expires=Thu, 01 Jan 1970 00:00:00 UTC"
+        "listItem=;expires=Thu, 01 Jan 1970 00:00:00 UTC"
   }
   
   

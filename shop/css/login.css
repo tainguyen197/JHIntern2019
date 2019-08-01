@@ -1,0 +1,75 @@
+.login-content {
+  margin-top: 100px
+}
+
+.login-box {
+  text-align: center;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 30vw;
+  height: 25vh;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px;
+}
+
+.login-box h2 {
+  margin: 0;
+  padding: 20px 0;
+  text-transform: uppercase;
+  color: #282a32
+}
+
+.login-box .login-data-box {
+  /* margin-top: 10px; */
+}
+
+.login-box .login-data-box .username-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.login-box .login-data-box .username-box p{
+  width: 30%;
+}
+
+.login-box .login-data-box .username-box input{
+  height: 20px;
+}
+
+.login-box .login-data-box .password-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.login-box .login-data-box .password-box p{
+  width: 30%;
+}
+
+.login-box .login-data-box .password-box input{
+  height: 20px;
+}
+
+.login-box .login-data-box .login-btn-box{
+  margin: 20px 0
+}
+
+.login-box .login-data-box .login-btn-box button{
+  position: relative;
+  height: 30px;
+  width: 40%;
+  border: none;
+  background-color: #282a32;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+@media only screen and (max-width: 425px) {
+  .login-box{
+    width: 100vw;
+    padding-bottom: 30px;
+  }
+}

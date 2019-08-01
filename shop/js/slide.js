@@ -74,9 +74,9 @@ const main = () => {
   slide.setDuration(4);
 
   slide.addPicture(new Picture("Black", "./img/banner/1.jpg"));
-  // slide.addPicture(new Picture("Spider", "./img/banner/2.jpg"));
+  slide.addPicture(new Picture("Spider", "./img/banner/2.jpg"));
   slide.addPicture(new Picture("Iron", "./img/banner/3.jpg"));
-  slide.addPicture(new Picture("Iron", "./img/banner/4.jpg"));
+  // slide.addPicture(new Picture("Iron", "./img/banner/4.jpg"));
 
   slide.create();
   slide.playAt(0);

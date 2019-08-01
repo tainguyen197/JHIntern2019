@@ -25,7 +25,7 @@ initMenu = () => {
     ul.appendChild(user);
     ul.appendChild(about);
 
-    if (userInfo === admin) {
+    if (userInfo === 'admin') {
       location.textContent = "Location";
       ul.appendChild(location);
     }
@@ -39,9 +39,15 @@ initMenu = () => {
   }
 
   login.addEventListener("click", () => {
-    const user = admin;
-    signIn(user);
-    window.location.reload();
+    const user = customer;
+    // signIn(user);
+    const host = window.location.origin;
+    const pathname = window.location.pathname;
+    const url =
+      host +
+      pathname.slice(0, window.location.pathname.lastIndexOf("/")) +
+      "/login.html";
+    window.location.replace(url);
   });
 
   logout.addEventListener("click", () => {
