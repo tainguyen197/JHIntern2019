@@ -14,7 +14,6 @@ customMoney = number => {
         index++;
       }
     }
-
     return number.reverse().join("");
   }
   return null;

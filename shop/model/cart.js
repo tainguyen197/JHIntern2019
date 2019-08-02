@@ -59,8 +59,11 @@ class Cart {
       listPrice.push(product.price * element.number  );
     });
 
+    if(listPrice.length>0)
     return listPrice.reduce((previous, cusor) =>{
       return previous + cusor;
     })
+
+    return 0;
   }
 }

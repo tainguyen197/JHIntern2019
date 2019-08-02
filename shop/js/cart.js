@@ -53,15 +53,37 @@ showItem = (item, number) => {
   selectNumberBoxbtnAdd.addEventListener("click", () => {
     user.cart.addCart(item.id);
     setCookie();
-    window.location.reload();
+    updateCost();
+
+    const product = user.cart.buyItems.filter(product=>{
+      return product.product === item.id
+    })[0];
+
+    if(product)
+    selectNumberBoxinput.value = product.number;
+    else{
+      window.location.reload()
+    }
+
   });
 
   selectNumberBoxbtnMinus.addEventListener("click", () => {
     user.cart.removeCart(item.id);
     setCookie();
-    window.location.reload();
+    updateCost();
+    const product = user.cart.buyItems.filter(product=>{
+      return product.product === item.id
+    })[0];
+
+    
+    if(product)
+    selectNumberBoxinput.value = product.number;
+    else{
+      window.location.reload()
+    }
   });
 };
+
 
 showListItemInCart = () => {};
 
@@ -74,6 +96,13 @@ showCost = (temporaryCost, comission, totalPrice, unit) => {
   comissionProvider.textContent = comission + "%";
   totalCost.textContent = customMoney(totalPrice) + unit;
 };
+
+updateCost = () =>{
+  const temporaryCost = user.cart.toTalPrice();
+  const comission = comissionForProvider.comission;
+  const totalPrice = temporaryCost - temporaryCost * comission;
+  showCost(temporaryCost, comission * 100, totalPrice, "đ");
+}
 
 cart = () => {
   initItemInCart();
@@ -104,12 +133,9 @@ cart = () => {
     showItem(product, element.number);
   });
 
-  const temporaryCost = user.cart.toTalPrice();
-  const comission = comissionForProvider.comission;
-
-  const totalPrice = temporaryCost - temporaryCost * comission;
-
-  showCost(temporaryCost, comission * 100, totalPrice, "đ");
+  updateCost()
 };
+
+
 
 cart();
